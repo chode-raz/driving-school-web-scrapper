@@ -26,7 +26,27 @@ class ScrapIt:
         r = self.session.get(url=url)
         print(r.text)
         soup = BeautifulSoup(r.text, "html.parser")
-        textbox = soup.select('.textbox span span')
+        containers = soup.select('.textType')
+        titles = []
+        for container in containers:
+            texts = container.select('.textbox span')
+            title = ''
+            for text in texts:
+                if "Lekcia" in text.get_text():
+                    title = text
+
+            if title is not None:
+                titles.append(title)
+
+                urls = []
+
+                elements = container.select('.textbox li p a')
+                for element in elements:
+                    url = element.get('href')
+                    header = element.get_text()
+                    urls.append((header, url))
+
+
         pass
 
     def create_dir(self):
