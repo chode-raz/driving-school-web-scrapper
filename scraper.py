@@ -10,7 +10,7 @@ class ScrapIt:
     base_url = 'https://extranet.jiscd.sk'
 
     assets_path = '/assets/'
-    pages_path = '/home/rastislav/PycharmProjects/drive_school_scraper/test/'
+    pages_path = '/download/'
 
     forbidden_urls = ['',
                       'https://public.test2.jiscd/portal/tool/8ffcfe76-ea9f-49c7-937e-e2bcca6ea426/ShowPage?errorMessage=&clearAttr=&newTopLevel=false&recheck=&itemId=2144&id=&addTool=-1&title=&source=&studentItemId=0&backPath=&sendingPage=2143&path=&postedComment=false&returnView='
